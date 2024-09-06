@@ -1,2 +1,2 @@
 # programming.2course
-C/C++
+мова програмування C/C++ 
