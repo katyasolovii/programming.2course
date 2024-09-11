@@ -1,21 +1,27 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
     
-    double degree_hour, degree_minute;
-    int hours, minutes;
+    double radian_hour, radian_minute;
+    int hours, minute;
 
-    printf("Enter degree of hour: ");
-    scanf("%lf", &degree_hour);
+    printf("Enter radian of hour: ");
+    scanf("%lf", &radian_hour);
 
-    printf("Enter degree of minute: ");
-    scanf("%lf", &degree_minute);
+    printf("Enter radian of minute: ");
+    scanf("%lf", &radian_minute);
 
-    // Кожна година це 15 градусів (45 / 3 = 15, всього 12 годин)
-    // Кожна хвилина це 3 градуса (5 поділок між годинами, тому 15 / 5 = 3 градуса, всього 60 хвилин)
-    hours = (int)(degree_hour / 15) % 12; 
-    minutes = (int)(degree_minute / 3) % 60; 
 
-    printf("Time is: %02d:%02d \n", hours, minutes); 
+    // Кожна година це 30 градусів (90 / 3 = 30, всього 12 годин)
+    // Кожна хвилина це 6 градуса (5 поділок між годинами, тому 30 / 5 = 6 градуса, всього 60 хвилин)
+
+    double degree_hour = (radian_hour * 180 / M_PI);
+    double degree_minute = (radian_minute * 180 / M_PI);
+
+    hours = (int)(degree_hour / 30) % 12; 
+    minute = (int)(degree_minute / 6) % 60; 
+
+    printf("Time is: %02d:%02d \n", hours, minute); 
 
 }
