@@ -148,6 +148,11 @@ void task6(){
 
 }
 
+int zero(double x){
+    const double eps = 1e-9;
+    return fabs(x) < eps;
+}
+
 void task7_a(){
 
     double a, b, c;
@@ -155,16 +160,16 @@ void task7_a(){
     printf("a, b, c: ");
     scanf("%lf %lf %lf", &a, &b, &c);
 
-    if (a == 0 && b != 0 && c != 0){
+    if (zero(a) && !zero(b) && !zero(c)){
         double x = - c / b;
         printf("x1 = %lf \n", x);
     }
-    if (c == 0 && a != 0 && c != 0){
+    if (zero(c) && !zero(a) && !zero(b)){
         int x1 = 0;
         double x2 = - a / b;
         printf("x1 = %d, x2 = %lf \n", x1, x2);
     }
-    if (b == 0 && a != 0 && c != 0){
+    if (zero(b) && !zero(a) && !zero(c)){
         int x = - c / a;
         if (x > 0){
             double x1 = sqrt(x);
@@ -190,7 +195,7 @@ void task7_a(){
             printf("No real roots.\n");
         }
     }
-    if (b == 0 && c == 0 && a != 0){
+    if (zero(b) && zero(c) && !zero(a)){
         if (a > 0){
             double x1 = sqrt(a);
             double x2 = - sqrt(a);
@@ -200,11 +205,11 @@ void task7_a(){
             printf("No real roots.\n");
         }
     }
-    if (a == 0 && c == 0 && b != 0){
+    if (zero(a) && zero(c) && !zero(b)){
         double x1 = -b;
         printf("x1 = %lf \n", x1);
     }
-    if (a == 0 && b == 0){
+    if (zero(a) && zero(b)){
         printf("No equation exists.\n");
     }
 }
@@ -215,10 +220,10 @@ void task7_b(){
     printf("a, b, c: ");
     scanf("%lf %lf %lf", &a, &b, &c);
 
-    if (a == 0 && b == 0){
+    if (zero(a) && zero(b)){
         printf("No equation exists.\n");
     }
-    if (a == 0 && b != 0 && c != 0){
+    if (zero(a) && !zero(b) && !zero(c)){
         double x = - c / a;
         if (x > 0){
             double x1 = sqrt(x);
@@ -229,7 +234,7 @@ void task7_b(){
             printf("No real roots.\n");
         }
     }
-    if (b == 0 && a != 0 && c != 0){
+    if (zero(b) && !zero(a) && !zero(c)){
         double x = - c / a;
         if (x > 0){
             double x1 = pow(x1, 1/4);
@@ -240,7 +245,7 @@ void task7_b(){
             printf("No real roots.\n");
         }
     }
-    if (c == 0 && a != 0 && b != 0){
+    if (zero(c) && !zero(a) && !zero(b)){
         int x1 = 0;
         double x = - b / a;
         if (x > 0){
@@ -252,7 +257,7 @@ void task7_b(){
             printf("x1 = %d \n", x1);
         }
     }
-    if (a == 0 && c == 0 && b != 0){
+    if (zero(a) && zero(c) && !zero(b)){
         if (b < 0){
             printf("No equation exists.\n");
         }
@@ -262,10 +267,10 @@ void task7_b(){
             printf("x1 = %lf, x2 = %lf \n", x1, x2);
         }
     }
-    if (a != 0 && b == 0 & c == 0){
+    if (!zero(a) && zero(b) && zero(c)){
         printf("x1 = 0 \n");
     }
-    if (a != 0 && b != 0 && c != 0){
+    if (!zero(a) && !zero(b) && !zero(c)){
         double d = pow(b, 2) - 4 * a * c;
         if (d < 0){
             printf("No real roots.\n");
@@ -310,13 +315,13 @@ void task7_b(){
 
 int main(){
 
-    task1();
-    task2();
-    task3();
-    task4();
-    task5();
-    task6();
-    task7_a();
+    // task1();
+    // task2();
+    // task3();
+    // task4();
+    // task5();
+    // task6();
+    // task7_a();
     task7_b();
     
 }
