@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include <math.h>
 
 
 void task13_b(double a, double b, double c){
-    
-    if (a != b){
+    const double eps= 1e-9;
+    if (fabs(a - b) > eps){
         double x1 = (-b - c) / (a - b);
         double x2 = (b - c) / (a - b);
         double y1 = 1 - x1;
