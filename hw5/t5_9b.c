@@ -23,10 +23,10 @@ void task9b(){
     }
     else{
         for (int i=3; i <= n; i++){
-        v_i = ((i - 2) / (pow((i - 3), 2) + 1)) * v_2 - v_1 * v_0 + 1.0;
-        v_0 = v_1;
-        v_1 = v_2;
-        v_2 = v_i;
+            v_i = ((i - 2.0) / (pow((i - 3.0), 2.0) + 1.0)) * v_2 - v_1 * v_0 + 1.0;
+            v_0 = v_1;
+            v_1 = v_2;
+            v_2 = v_i;
         }
         printf("Result: %lf \n", v_i);
     }
