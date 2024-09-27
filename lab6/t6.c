@@ -38,7 +38,7 @@ void task3(){
     printf("j = ");
     scanf("%llu", &m);
 
-    result = m & ~(1 << j);;
+    result = m & ~(1 << j);
 
     printf("%llu \n", result);
     printf("%llx \n", result);
