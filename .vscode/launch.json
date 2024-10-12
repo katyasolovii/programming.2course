@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/katyasolovii/programming.2course/labs/lab3",
-      "program": "/Users/katyasolovii/programming.2course/labs/lab3/build/Debug/outDebug"
+      "cwd": "/Users/katyasolovii/programming.2course/labs/lab9",
+      "program": "/Users/katyasolovii/programming.2course/labs/lab9/build/Debug/outDebug"
     }
   ]
 }
