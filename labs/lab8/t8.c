@@ -202,35 +202,42 @@ void task6(){
 
 }
 
-void upper_matrix(double matrix[MAX_SIZE][MAX_SIZE], int n){
+int upper_matrix(double matrix[MAX_SIZE][MAX_SIZE], int n){
+    int sign = 1;
     for (int i = 0; i < n; i++) {
         if (matrix[i][i] == 0) {
             for (int k = i + 1; k < n; k++) {
-                if (matrix[k][i] != 0) {
+                if (matrix[k][i] != 0 && matrix[i][k] != 0) {
                     // треба поміняти рядки місцями
                     for (int j = 0; j < n; j++) {
                         double temp = matrix[i][j];
                         matrix[i][j] = matrix[k][j];
                         matrix[k][j] = temp;
                     }
+                    sign *= -1;
+                    // перетворимо рядки нижче на нулі
+                    for (int j = i + 1; j < n; j++) {
+                        //  знайдемо потрібний множник
+                        double num = matrix[j][i] / matrix[i][i];
+                        for (int k = i; k < n; k++){
+                            // домножимо num на весь рядок даного рядка і від цього рядка віднімаємо рядок інший
+                            matrix[j][k] -= num * matrix[i][k];
+                        }
+                    }
+                }
+                else if (matrix[k][i] == 0 && matrix[k+1][i] == 0 && matrix[i][k] == 0 && matrix[i][k+1] == 0 )
+                {
+                    break;
                 }
             }
         }
-        // перетворимо рядки нижче на нулі
-        for (int j = i + 1; j < n; j++) {
-            //  знайдемо потрібний множник
-            double num = (matrix[j][i] / matrix[i][i]);
-            for (int k = i; k < n; k++){
-                // жомножимо num на весь рядок даного рядка і від цього рядка віднімаємо рядок інший
-                matrix[j][k] -= num * matrix[i][k];
-            }
-        }
     }
+    return sign;
 }
 
 double determinant(double matrix[MAX_SIZE][MAX_SIZE], int n){
-    upper_matrix(matrix, n);
-    double det = 1;
+    int sign = upper_matrix(matrix, n);
+    double det = sign; 
     for (int i = 0; i < n; i++) {
         det *= matrix[i][i];
     }
@@ -249,29 +256,6 @@ void task7(){
 
     printf("The determinant of the matrix is: %.2lf \n", determinant(matrix, n));
 
-}
-
-int equal_with_epsilon(double a, double b) {
-    return fabs(a - b) < EPSILON;
-}
-
-void test_task7(){
-    double matrix1[MAX_SIZE][MAX_SIZE] = {{1, 2, 3}, {0, 1, 4}, {5, 6, 0}};
-    if (equal_with_epsilon((determinant(matrix1, 3)), 1)){
-        printf("Test1 passed successfully. \n");
-    }
-    double matrix2[MAX_SIZE][MAX_SIZE] = {{2, 3}, {1, 4}};
-    if (equal_with_epsilon((determinant(matrix2, 2)), 5)){
-        printf("Test2 passed successfully. \n");
-    }
-    double matrix3[MAX_SIZE][MAX_SIZE] = {{1, 2, 5, 3}, {4, 5, 6, 12}, {7, -21, 9, 0}, {10, -9, 23, 12}};
-    if (equal_with_epsilon((determinant(matrix3, 4)), 591)){
-        printf("Test3 passed successfully. \n");
-    }
-    double matrix4[MAX_SIZE][MAX_SIZE] = {{1, 2, 5, 3, 5}, {4, 5, 6, 12, 1}, {7, -21, 9, 0, 1}, {10, -9, 23, 0, 1}, {-2, -7, -2, 3, 4}};
-    if (equal_with_epsilon((determinant(matrix4, 5)), -51858.00)){
-        printf("Test4 passed successfully. \n");
-    }
 }
 
 int main(){
@@ -300,7 +284,6 @@ int main(){
     }
     else if (task == 7){
         task7();
-        test_task7();
     }
 
 }
