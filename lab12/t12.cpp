@@ -58,15 +58,15 @@ void task3(){
     for (unsigned i=1; i <= n; i++) {
         if (i == 1){
             double root = sqrt(i);
-            cout << fixed << setprecision(0) << root << " ";
+            cout << setprecision(0) << root << " ";
         }
         else{
             double root = sqrt(i);
             if (root == floor(root)){
-                cout << setw(8) << fixed << setprecision(0) << root << " ";
+                cout << setw(8) << setprecision(0) << root << " ";
             }
             else{
-                cout << setw(8) << fixed << setprecision(2) << root << " ";
+                cout << setw(8) << setprecision(2) << root << " ";
             }
         }
     }
@@ -129,7 +129,7 @@ void task5(){
 
     for (unsigned j=i; j > 0; j--){
         double res = sqrt(mas[j - 1]);
-        cout << fixed << setprecision(4) << res << endl;
+        cout << setprecision(4) << res << endl;
     }
 }
 
