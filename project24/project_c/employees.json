@@ -1,0 +1,38 @@
+{
+	"employees":	[{
+			"first_name":	"Liam",
+			"last_name":	"Walker",
+			"profession":	"Professor",
+			"base_salary":	2400,
+			"years_of_experience":	10,
+			"salary":	5400
+		}, {
+			"first_name":	"Amelia",
+			"last_name":	"Harper",
+			"profession":	"Senior Lecturer",
+			"base_salary":	1000,
+			"years_of_experience":	4,
+			"salary":	1800
+		}, {
+			"first_name":	"Ethan",
+			"last_name":	"Clarke",
+			"profession":	"Doctoral Candidate",
+			"base_salary":	4000,
+			"years_of_experience":	9,
+			"salary":	8700
+		}, {
+			"first_name":	"Sophia",
+			"last_name":	"Miller",
+			"profession":	"Accountant",
+			"base_salary":	2500,
+			"years_of_experience":	12,
+			"salary":	4000
+		}, {
+			"first_name":	"James",
+			"last_name":	"Lewis",
+			"profession":	"Cleaner",
+			"base_salary":	700,
+			"years_of_experience":	4,
+			"salary":	840
+		}]
+}
