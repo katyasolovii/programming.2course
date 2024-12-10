@@ -1,0 +1,48 @@
+{
+	"students":	[{
+			"first_name":	"Olivia",
+			"last_name":	"Bennett",
+			"specialty":	"Computer mathematics",
+			"degree_level":	"Bachelor",
+			"year_of_study":	2,
+			"average_grade":	85.4,
+			"type_scholarship":	"Regular",
+			"lecturers":	[{
+					"first_name":	"Ethan",
+					"last_name":	"Clarke"
+				}, {
+					"first_name":	"Amelia",
+					"last_name":	"Harper"
+				}]
+		}, {
+			"first_name":	"Lucas",
+			"last_name":	"Thompson",
+			"specialty":	"Computer mathematics",
+			"degree_level":	"Bachelor",
+			"year_of_study":	2,
+			"average_grade":	76.98,
+			"type_scholarship":	"None",
+			"lecturers":	[{
+					"first_name":	"Ethan",
+					"last_name":	"Clarke"
+				}]
+		}, {
+			"first_name":	"Emma",
+			"last_name":	"Wilson",
+			"specialty":	"Computer mathematics",
+			"degree_level":	"Bachelor",
+			"year_of_study":	2,
+			"average_grade":	73.98,
+			"type_scholarship":	"None",
+			"lecturers":	[{
+					"first_name":	"Ethan",
+					"last_name":	"Clarke"
+				}, {
+					"first_name":	"Amelia",
+					"last_name":	"Harper"
+				}, {
+					"first_name":	"Liam",
+					"last_name":	"Walker"
+				}]
+		}]
+}
